@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="">Home</a>
+                    <a class="nav-link" href="{{ route('store.index') }}">Listar Fraldas</a>
                 </li>
             </ul>
         </div>

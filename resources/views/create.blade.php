@@ -2,7 +2,7 @@
 
 @section('content')
     <br><br>
-    <form action="{{ route('admin.store') }}" method="post">
+    <form action="{{ route('store.store') }}" method="post">
         @csrf
         <div class="form-group">
             <label>Marca</label>

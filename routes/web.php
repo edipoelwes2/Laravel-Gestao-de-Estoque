@@ -17,7 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->namespace('Admin')->group(function() {
+Route::resource('store', 'Admin\\ProductController');
+Route::get('delete{store}', 'Admin\\ProductController@showDelete')->name('store.delete');
+
+
+
+/*Route::prefix('loja')->namespace('Admin')->group(function() {
 
     Route::resource('admin', 'AdminController');
-});
+});*/
+

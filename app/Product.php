@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fralda extends Model
+class Product extends Model
 {
-    protected $table = 'fraldas';
+    //protected $table = 'products';
 
     protected $fillable = [
         'marca',

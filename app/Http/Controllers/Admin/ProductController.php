@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Fralda;
+use App\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $fraldas = Fralda::paginate(10);
+        $datas = Product::all();
 
-        return view('index', compact('fraldas'));
+        return view('index', compact('datas'));
     }
 
     /**
@@ -38,12 +38,12 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['atualizado'] = 1;
+        $datas = $request->all();
+        $datas['atualizado'] = 1;
 
-        Fralda::create($data);
+        Product::create($datas);
 
-        return redirect()->route('admin.index');
+        return redirect()->route('store.index');
     }
 
     /**
@@ -54,7 +54,9 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('show', compact('product'));
     }
 
     /**
@@ -65,7 +67,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        return view('edit', compact('product'));
     }
 
     /**
@@ -77,7 +81,17 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datas = $request->all();
+        $product = Product::findOrFail($id);
+        $product['atualizado'] += 1;
+
+        $media = $datas['valor_entrada'] + $product['valor_entrada'];
+        //$datas['valor_entrada'] = $media/$product->atualizado;
+        $datas['valor_entrada'] = $media;
+
+        $product->update($datas);
+
+        return redirect()->route('store.index');
     }
 
     /**
@@ -86,8 +100,19 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
-        //
+        $data = Product::findOrFail($id);
+        $data->delete();
+
+        return back()->withInput();
+    }
+
+    public function showDelete($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return view('delete', compact('product'));
     }
 }
