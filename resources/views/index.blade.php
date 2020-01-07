@@ -17,7 +17,6 @@
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Valor</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -27,12 +26,6 @@
                     <td><a href="{{ route('store.show', ['store'=>$product->id]) }}">{{ $product->descricao }}</a></td>
                     <td>{{ $product->quantidade }}</td>
                     <td>{{ $product->valor_saida }}</td>
-                    <td>
-                        <div class="btn-group">
-                            <a href="{{ route('store.edit', ['store'=>$product->id]) }}" class="btn btn-sm btn-primary">Editar</a>
-                            <a href="{{ route('store.delete', ['store'=>$product->id]) }}" class="btn btn-sm btn-danger">Excluir</a>
-                        </div>
-                    </td>
                 </tr>
             @empty
                 <tr>
