@@ -106,7 +106,7 @@ class ProductController extends Controller
         $data = Product::findOrFail($id);
         $data->delete();
 
-        return back()->withInput();
+        return redirect()->route('store.index');
     }
 
     public function showDelete($id)
