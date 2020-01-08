@@ -16,7 +16,7 @@
                 <th>#</th>
                 <th>Produto</th>
                 <th>Quantidade</th>
-                <th>Valor</th>
+                <th>Preço</th>
             </tr>
         </thead>
         <tbody>
@@ -25,12 +25,12 @@
                     <td>{{ $product->id }}</td>
                     <td><a href="{{ route('store.show', ['store'=>$product->id]) }}">{{ $product->descricao }}</a></td>
                     <td>{{ $product->quantidade }}</td>
-                    <td>{{ $product->valor_saida }}</td>
+                    <td>R$ {{ $product->valor_saida }}</td>
                 </tr>
             @empty
                 <tr>
 
-                    <td colspan="5"><h2>Nenhum Produto cadastrado!!!</h2></td>
+                    <td colspan="5"><h2>Nenhum Produto Cadastrado!!!</h2></td>
                 </tr>
             @endforelse
         </tbody>

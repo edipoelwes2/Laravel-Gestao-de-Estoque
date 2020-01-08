@@ -39,7 +39,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $datas = $request->all();
-        $datas['atualizado'] = 1;
+        //$datas['atualizado'] = 1;
 
         Product::create($datas);
 
@@ -83,11 +83,7 @@ class ProductController extends Controller
     {
         $datas = $request->all();
         $product = Product::findOrFail($id);
-        $product['atualizado'] += 1;
 
-        $media = $datas['valor_entrada'] + $product['valor_entrada'];
-        //$datas['valor_entrada'] = $media/$product->atualizado;
-        $datas['valor_entrada'] = $media;
 
         $product->update($datas);
 
