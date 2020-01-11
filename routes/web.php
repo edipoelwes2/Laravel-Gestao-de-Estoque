@@ -21,6 +21,10 @@ Route::resource('store', 'Admin\\ProductController');
 Route::get('delete{store}', 'Admin\\ProductController@showDelete')->name('store.delete');
 
 
+Route::get('diaper', 'Admin\\DiaperController@create')->name('diaper.create');
+Route::post('diaper/store', 'Admin\\DiaperController@store')->name('diaper.store');
+
+
 
 /*Route::prefix('loja')->namespace('Admin')->group(function() {
 

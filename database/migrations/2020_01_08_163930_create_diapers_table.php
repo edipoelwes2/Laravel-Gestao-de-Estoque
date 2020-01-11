@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUpdateDiapersTable extends Migration
+class CreateDiapersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUpdateDiapersTable extends Migration
      */
     public function up()
     {
-        Schema::create('update_diapers', function (Blueprint $table) {
+        Schema::create('diapers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('products_id');
 
@@ -32,6 +32,6 @@ class CreateUpdateDiapersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('update_diapers');
+        Schema::dropIfExists('diapers');
     }
 }

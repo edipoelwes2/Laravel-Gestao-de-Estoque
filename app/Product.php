@@ -17,4 +17,10 @@ class Product extends Model
         'valor_saida',
         'atualizado',
     ];
+
+
+    public function diaper()
+    {
+        return $this->hasMany(Diaper::class, 'products_id');
+    }
 }

@@ -10,12 +10,12 @@
         </div>
     </div>
 
-    <table class="table table-striped">
+    <table class="table table-responsive-sm table-striped">
         <thead class="table-dark">
             <tr>
                 <th>#</th>
                 <th>Produto</th>
-                <th>Quantidade</th>
+
                 <th>Preço</th>
             </tr>
         </thead>
@@ -24,7 +24,6 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td><a href="{{ route('store.show', ['store'=>$product->id]) }}">{{ $product->descricao }}</a></td>
-                    <td>{{ $product->quantidade }}</td>
                     <td>R$ {{ $product->valor_saida }}</td>
                 </tr>
             @empty
@@ -35,5 +34,4 @@
             @endforelse
         </tbody>
     </table>
-
 @endsection

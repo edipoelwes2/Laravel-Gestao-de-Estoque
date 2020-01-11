@@ -24,6 +24,9 @@
     </tbody>
 </table>
 
+    <div class="alert alert-info" role="alert">
+        Tem certeza que quer excluir esse itém!!!
+    </div>
 <div class="btn-group float-right">
     <a href="{{ route('store.index') }}" class="btn btn-sm btn-primary">Voltar</a>
     <form action="{{ route('store.destroy', ['store'=>$product->id]) }}" method="post">

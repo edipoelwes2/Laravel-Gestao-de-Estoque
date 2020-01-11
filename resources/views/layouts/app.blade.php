@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ 'admin.index' }}">LittleOne</a>
+        <a class="navbar-brand" href="{{ route('store.index') }}">LittleOne</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="">Entrada</a>
+                    <a class="nav-link" href="{{ route('diaper.create') }}">Entrada</a>
                 </li>
 
                 <li class="nav-item">

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Diaper;
 use App\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -39,7 +41,6 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $datas = $request->all();
-        //$datas['atualizado'] = 1;
 
         Product::create($datas);
 
@@ -54,9 +55,16 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+
         $product = Product::find($id);
 
-        return view('show', compact('product'));
+        $qtd = $product->diaper()->sum('quantidade');
+        $cont = $product->diaper()->count('quantidade') + 1;
+        $total = $product->diaper()->sum('valor_entrada');
+
+        $media = number_format(($product->valor_entrada + $total) / $cont, 2, ',', '.');
+
+        return view('show', compact('product', 'qtd', 'media'));
     }
 
     /**
@@ -84,7 +92,6 @@ class ProductController extends Controller
         $datas = $request->all();
         $product = Product::findOrFail($id);
 
-
         $product->update($datas);
 
         return redirect()->route('store.index');
@@ -111,4 +118,5 @@ class ProductController extends Controller
 
         return view('delete', compact('product'));
     }
+
 }

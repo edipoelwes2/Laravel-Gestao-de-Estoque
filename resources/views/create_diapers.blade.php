@@ -2,11 +2,16 @@
 
 @section('content')
     <br><br>
-    <form action="{{ route('store.store') }}" method="post">
+    <form action="{{ route('diaper.store') }}" method="post">
         @csrf
 
         <div class="form-group">
-
+            <label>Produto</label>
+            <select name="produto" class="form-control btn btn-outline-dark">
+                @foreach($products as $product)
+                    <option value="{{ $product->id }}">{{ $product->id }} - {{ $product->descricao }}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
@@ -20,7 +25,7 @@
         </div>
 
 
-        <button class="btn btn-lg btn-success">Salvar</button>
+        <button type="submit" class="btn btn-lg btn-success">Cadastrar</button>
     </form>
     <br><br>
 @endsection
