@@ -15,7 +15,7 @@
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Preço Medio de Compra</th>
-                <th>Preço Medio de Venda</th>
+                <th>Preço Venda</th>
                 <th>Ações</th>
             </tr>
         </thead>

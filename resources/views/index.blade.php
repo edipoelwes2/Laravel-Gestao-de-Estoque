@@ -15,7 +15,6 @@
             <tr>
                 <th>#</th>
                 <th>Produto</th>
-
                 <th>Preço</th>
             </tr>
         </thead>

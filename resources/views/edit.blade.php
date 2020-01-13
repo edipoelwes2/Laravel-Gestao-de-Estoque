@@ -44,20 +44,7 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label>Quantidade</label>
-            <input type="number" name="quantidade" class="form-control" value="{{ $product->quantidade }}">
-        </div>
 
-        <div class="form-group">
-            <label>Valor Entrada</label>
-            <input type="number" name="valor_entrada" class="form-control" value="{{ $product->valor_entrada }}">
-        </div>
-
-        <div class="form-group">
-            <label>Valor Saida</label>
-            <input type="number" name="valor_saida" class="form-control" value="{{ $product->valor_saida  }}">
-        </div>
 
         <button class="btn btn-lg btn-success">Atualizar Produto</button>
     </form>

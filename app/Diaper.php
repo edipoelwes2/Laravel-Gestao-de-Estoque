@@ -13,6 +13,7 @@ class Diaper extends Model
 
         'quantidade',
         'valor_entrada',
+        'valor_saida',
     ];
 
 

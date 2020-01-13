@@ -12,10 +12,6 @@ class Product extends Model
         'marca',
         'descricao',
         'tamanho',
-        'quantidade',
-        'valor_entrada',
-        'valor_saida',
-        'atualizado',
     ];
 
 
