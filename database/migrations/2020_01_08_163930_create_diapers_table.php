@@ -17,7 +17,7 @@ class CreateDiapersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('products_id');
 
-            $table->Integer('quantidade');
+            $table->Integer('qtds');
             $table->Decimal('valor_entrada', 10, 2);
             $table->timestamps();
 

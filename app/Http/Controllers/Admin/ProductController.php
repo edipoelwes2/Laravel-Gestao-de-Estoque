@@ -58,8 +58,8 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
-        $qtd = $product->diaper()->sum('quantidade');
-        $cont = $product->diaper()->count('quantidade') + 1;
+        $qtd = $product->diaper()->sum('qtds');
+        $cont = $product->diaper()->count('qtds') + 1;
         $total = $product->diaper()->sum('valor_entrada');
 
         $media = number_format(($product->valor_entrada + $total) / $cont, 2, ',', '.');

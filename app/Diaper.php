@@ -11,7 +11,7 @@ class Diaper extends Model
 
     protected $fillable = [
 
-        'quantidade',
+        'qtds',
         'valor_entrada',
     ];
 
