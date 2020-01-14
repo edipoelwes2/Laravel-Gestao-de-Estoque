@@ -9,7 +9,6 @@
     <tr>
         <th>#</th>
         <th>Produto</th>
-        <th>Quantidade</th>
         <th>Valor</th>
     </tr>
     </thead>
@@ -18,7 +17,6 @@
     <tr>
         <td>{{ $product->id }}</td>
         <td>{{ $product->descricao }}</td>
-        <td>{{ $product->quantidade }}</td>
         <td>{{ $product->valor_saida }}</td>
     </tr>
     </tbody>

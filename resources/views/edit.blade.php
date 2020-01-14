@@ -44,7 +44,10 @@
             </select>
         </div>
 
-
+        <div class="form-group">
+            <label>Valor Venda</label>
+            <input type="number" step="0.01" min="0" name="valor_saida" class="form-control" value="{{ $product->valor_saida }}">
+        </div>
 
         <button class="btn btn-lg btn-success">Atualizar Produto</button>
     </form>

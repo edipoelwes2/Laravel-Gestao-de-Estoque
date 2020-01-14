@@ -8,10 +8,14 @@ class Product extends Model
 {
     protected $table = 'products';
 
+    //public $timestamps = false;
+
     protected $fillable = [
         'marca',
         'descricao',
         'tamanho',
+        'valor_saida',
+        'qtd',
     ];
 
 

@@ -18,6 +18,10 @@ class ProductController extends Controller
     public function index()
     {
         $datas = Product::all();
+        //$datas = DB::select("SELECT p.id, p.descricao, d.valor_saida, d.quantidade FROM products p JOIN diapers d ON p.id = d.products_id;");
+
+        //$qtd = DB::select("SELECT d.products_id, p.id, d.quantidade FROM diapers d JOIN products p ON p.id = d.products_id;");
+
 
         return view('index', compact('datas'));
     }
@@ -59,10 +63,17 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         $qtd = $product->diaper()->sum('quantidade');
-        $cont = $product->diaper()->count('quantidade') + 1;
+        $cont = $product->diaper()->count('quantidade');
         $total = $product->diaper()->sum('valor_entrada');
 
+        if ($cont == 0)
+        {
+            $cont = 1;
+        }
+
+
         $media = number_format(($product->valor_entrada + $total) / $cont, 2, ',', '.');
+
 
         return view('show', compact('product', 'qtd', 'media'));
     }

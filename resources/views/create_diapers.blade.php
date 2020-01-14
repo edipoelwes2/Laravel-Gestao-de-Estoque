@@ -24,11 +24,6 @@
             <input type="number" step="0.01" min="0" name="valor_entrada" class="form-control">
         </div>
 
-        <div class="form-group">
-            <label>Valor Venda</label>
-            <input type="number" step="0.01" min="0" name="valor_saida" class="form-control">
-        </div>
-
 
         <button type="submit" class="btn btn-lg btn-success">Cadastrar</button>
     </form>

@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('descricao');
             $table->string('marca');
             $table->string('tamanho');
+            $table->Integer('qtd')->nullable();
+            $table->Decimal('valor_saida', 10, 2);
 
             $table->timestamps();
         });

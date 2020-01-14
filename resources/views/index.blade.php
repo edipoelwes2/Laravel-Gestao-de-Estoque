@@ -15,6 +15,7 @@
             <tr>
                 <th>#</th>
                 <th>Produto</th>
+                <th>Quantidade</th>
                 <th>Preço</th>
             </tr>
         </thead>
@@ -23,6 +24,7 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td><a href="{{ route('store.show', ['store'=>$product->id]) }}">{{ $product->descricao }}</a></td>
+                    <td> {{ $product->qtd ?? '0' }} </td>
                     <td>R$ {{ $product->valor_saida }}</td>
                 </tr>
             @empty
