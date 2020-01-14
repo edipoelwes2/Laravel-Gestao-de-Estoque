@@ -15,7 +15,7 @@
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Preço Medio de Compra</th>
-                <th>Preço Medio de Venda</th>
+                <th>Preço Venda</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -23,7 +23,7 @@
         <tbody>
             <tr>
                 <td>{{ $product->descricao }}</td>
-                <td>{{ $product->quantidade + $qtd }}</td>
+                <td>{{ $qtd}}</td>
                 <td>R$ {{ $media }}</td>
                 <td>R$ {{ $product->valor_saida }}</td>
                 <td>

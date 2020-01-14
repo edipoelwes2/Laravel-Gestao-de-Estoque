@@ -13,6 +13,7 @@ class Diaper extends Model
 
         'qtds',
         'valor_entrada',
+
     ];
 
 

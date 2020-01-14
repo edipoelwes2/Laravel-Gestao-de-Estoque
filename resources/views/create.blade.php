@@ -41,17 +41,7 @@
         </div>
 
         <div class="form-group">
-            <label>Quantidade</label>
-            <input type="number" step="1" name="quantidade" class="form-control" value="{{ old('quantidade') }}">
-        </div>
-
-        <div class="form-group">
-            <label>Valor Entrada</label>
-            <input type="number" step="0.01" min="0" name="valor_entrada" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Valor Saida</label>
+            <label>Valor Venda</label>
             <input type="number" step="0.01" min="0" name="valor_saida" class="form-control">
         </div>
 

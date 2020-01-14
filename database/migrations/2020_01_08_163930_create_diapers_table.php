@@ -19,6 +19,7 @@ class CreateDiapersTable extends Migration
 
             $table->Integer('qtds');
             $table->Decimal('valor_entrada', 10, 2);
+
             $table->timestamps();
 
             $table->foreign('products_id')->references('id')->on('products');
