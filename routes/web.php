@@ -15,14 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});//->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::resource('store', 'Admin\\ProductController');
+    Route::get('delete{store}', 'Admin\\ProductController@showDelete')->name('store.delete');
+
+
+    Route::get('diaper', 'Admin\\DiaperController@create')->name('diaper.create');
+    Route::post('diaper/store', 'Admin\\DiaperController@store')->name('diaper.store');
+
 });
-
-Route::resource('store', 'Admin\\ProductController');
-Route::get('delete{store}', 'Admin\\ProductController@showDelete')->name('store.delete');
-
-
-Route::get('diaper', 'Admin\\DiaperController@create')->name('diaper.create');
-Route::post('diaper/store', 'Admin\\DiaperController@store')->name('diaper.store');
 
 
 
@@ -30,4 +40,3 @@ Route::post('diaper/store', 'Admin\\DiaperController@store')->name('diaper.store
 
     Route::resource('admin', 'AdminController');
 });*/
-
