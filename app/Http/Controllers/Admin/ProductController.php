@@ -17,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $datas = Product::all();
+        //$datas = Product::all();
+        $datas = Product::orderBy('id', 'desc')->paginate(10);;
         //$datas = DB::select("SELECT p.id, p.descricao, d.valor_saida, d.quantidade FROM products p JOIN diapers d ON p.id = d.products_id;");
 
         //$qtd = DB::select("SELECT d.products_id, p.id, d.quantidade FROM diapers d JOIN products p ON p.id = d.products_id;");

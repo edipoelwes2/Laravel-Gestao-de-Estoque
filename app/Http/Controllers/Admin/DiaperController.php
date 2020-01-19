@@ -31,6 +31,7 @@ class DiaperController extends Controller
             ->sum('quantidade');
 
 
+
         $product->qtd = $qtd;
         $product->save();
 

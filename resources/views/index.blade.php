@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+    <div class="row" style="margin-bottom: 10px;">
         <div class="col-sm-12">
             <br>
             <a href="{{ route('store.create') }}" class="btn btn-success float-right">Cadastrar Fralda</a>
-            <h2>Fraldas</h2>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -35,4 +34,6 @@
             @endforelse
         </tbody>
     </table>
+
+    {{ $datas->links() }}
 @endsection

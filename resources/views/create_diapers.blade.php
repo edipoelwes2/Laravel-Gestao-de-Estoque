@@ -16,7 +16,7 @@
 
         <div class="form-group">
             <label>Quantidade</label>
-            <input type="number" step="1" name="qtds" class="form-control">
+            <input type="number" step="1" name="quantidade" class="form-control">
         </div>
 
         <div class="form-group">
