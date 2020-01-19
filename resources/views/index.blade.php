@@ -24,7 +24,8 @@
                     <td>{{ $product->id }}</td>
                     <td><a href="{{ route('store.show', ['store'=>$product->id]) }}">{{ $product->descricao }}</a></td>
                     <td> {{ $product->qtd ?? '0' }} </td>
-                    <td>R$ {{ $product->valor_saida }}</td>
+                    <td>R$ {{ number_format($product->valor_saida, 2, ',', '.') }}</td>
+
                 </tr>
             @empty
                 <tr>

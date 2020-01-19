@@ -25,7 +25,7 @@
                 <td>{{ $product->descricao }}</td>
                 <td>{{ $qtd}}</td>
                 <td>R$ {{ $media }}</td>
-                <td>R$ {{ $product->valor_saida }}</td>
+                <td>R$ {{ number_format($product->valor_saida, 2, ',', '.') }}</td>
                 <td>
                     <div class="btn-group">
                         <a href="{{ route('store.edit', ['store'=>$product->id]) }}" class="btn btn-sm btn-primary">Editar</a>
